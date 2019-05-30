@@ -5,7 +5,7 @@ LABEL base.image="lepinkainen/ubuntu-python-base"
 LABEL version="1"
 LABEL software="Haplotypo"
 LABEL software.version="0.10"
-LABEL description="Haplotypo: To-Do"
+LABEL description="Haplotypo aims to do read mapping and variant calling on phased genomes, without loosing phasing information. In the end the corrected haplotypes are provided."
 LABEL website="https://github.com/Gabaldonlab/haplotypo"
 LABEL license="GNU General Public License To-Do"
 
@@ -39,9 +39,10 @@ RUN echo 'alias haplotypo="python /root/src/haplotypo/bin/haplotypo.py"' >> ~/.b
 WORKDIR /root/src/haplotypo/dependencies/
 # ---------------------------------------
 RUN echo "Installing Java 1.8..."
-RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
-RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
-RUN apt-get install -y --force-yes oracle-java8-installer
+# RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
+# RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
+# RUN apt-get install -y --force-yes oracle-java8-installer
+RUN apt install -y openjdk-8-jdk
 # ---------------------------------------
 RUN echo "Installing libs..."
 RUN apt-get -y install libncurses5-dev libncursesw5-dev && \
