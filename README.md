@@ -1,9 +1,15 @@
 # Haplotypo Docker
 This Dockerfile builds the Docker image to work with the Haplotypo pipeline.
 
+### Download the last image version
+This is our recommended option.
+```shell
+docker pull cgenomics/haplotypopip
+```
+
 ### Building a new image
-Building your docker container will take a few minutes the first time through. 
-If you change your script or Dockerfile and need to rebuild, the subsequent times will be faster, since Docker builds things in layers.
+Use this option only if you want to build your own Haplotypo Docker image. 
+This will take around 5 minutes the first time.
 ```shell
 docker build -t cgenomics/haplotypopip:1.0 .
 ```
