@@ -74,6 +74,7 @@ RUN apt-get install -y liblzma-dev
 RUN wget https://github.com/samtools/htslib/releases/download/1.9/htslib-1.9.tar.bz2
 RUN wget https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9.tar.bz2
 RUN wget https://github.com/samtools/bcftools/releases/download/1.9/bcftools-1.9.tar.bz2
+RUN git clone --recursive git://github.com/ekg/vcflib.git
 
 RUN tar -vxjf htslib-1.9.tar.bz2
 RUN tar -vxjf samtools-1.9.tar.bz2
@@ -84,6 +85,8 @@ RUN make
 WORKDIR $SOURCE_DIR/samtools-1.9
 RUN make
 WORKDIR $SOURCE_DIR/bcftools-1.9
+RUN make
+WORKDIR $SOURCE_DIR/vcflib
 RUN make
 
 ENV PATH "/root/src/haplotypo/dependencies/samtools-1.9/:${PATH}"
