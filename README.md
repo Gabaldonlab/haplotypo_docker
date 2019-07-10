@@ -15,7 +15,7 @@ docker run -it cgenomics/haplotypo python /root/src/haplotypo/bin/haplotypo.py -
 ### Testing the new image with test data
 Process the data inside the image - all data will be lost at the end
 ```shell
-docker run -it -h cgenomics/haplotypo python /root/src/haplotypo/bin/haplotypo.py -o ./shared/output -amb 0 -hapA /root/src/haplotypo/dataset/A.chr7.fa -hapB /root/src/haplotypo/dataset/B.chr7.fa -idA A_AB -idB B_AB -f1 /root/src/haplotypo/dataset/AB.chr7.1.fq.gz -f2 /root/src/haplotypo/dataset/AB.chr7.2.fq.gz -caller GATK
+docker run -it cgenomics/haplotypo python /root/src/haplotypo/bin/haplotypo.py -o ./shared/output -amb 0 -hapA /root/src/haplotypo/dataset/A.chr7.fa -hapB /root/src/haplotypo/dataset/B.chr7.fa -idA A_AB -idB B_AB -f1 /root/src/haplotypo/dataset/AB.chr7.1.fq.gz -f2 /root/src/haplotypo/dataset/AB.chr7.2.fq.gz -caller GATK
 ```
 
 ### Testing the new image with your own data
