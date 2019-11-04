@@ -34,7 +34,6 @@ RUN mkdir -p /root/src/haplotypo/dependencies
 RUN mkdir -p /root/src/haplotypo/shared
 RUN mkdir -p /root/src/haplotypo/shared/output
 RUN chmod 777 /root/src/haplotypo/shared/output
-RUN echo 'alias haplotypo="python /root/src/haplotypo/bin/haplotypo.py"' >> ~/.bashrc
 
 WORKDIR /root/src/haplotypo/dependencies/
 # ---------------------------------------
